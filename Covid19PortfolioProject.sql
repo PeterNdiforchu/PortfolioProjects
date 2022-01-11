@@ -25,7 +25,7 @@ Order by 1,2
 -- Total Cases vs Population
 -- Shows what percentage of population infected with Covid
 
-Select TOP 10 Location, date, Population, total_cases, (total_cases/population)*100 as PercentPopulationInfected
+Select Location, date, Population, total_cases, (total_cases/population)*100 as PercentPopulationInfected
 From PortfolioProject..CovidDeaths
 --Where location = 'Canada'
 Order by 1,2
@@ -33,7 +33,7 @@ Order by 1,2
 
 -- Countries with Highest Infection Rate compared to Population
 
-Select TOP 10 Location, Population, MAX(total_cases) as HighestInfectionCount, MAX((total_cases/population))*100 as PercentPopulationInfected
+Select Location, Population, MAX(total_cases) as HighestInfectionCount, MAX((total_cases/population))*100 as PercentPopulationInfected
 From PortfolioProject..CovidDeaths
 --Where location = 'Canada'
 Group by location, Population
